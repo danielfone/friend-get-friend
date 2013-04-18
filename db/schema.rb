@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418080601) do
+ActiveRecord::Schema.define(:version => 20130418082638) do
 
   create_table "entries", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "code"
+    t.integer  "referrer_id"
   end
 
   add_index "entries", ["email"], :name => "index_entries_on_email", :unique => true

@@ -1,1 +1,24 @@
 Thanks for signing up <%= @entry.name %>
+
+<p>
+  Share the link below and for every referral you'll get another chance to win.
+  <%- if @entry.referrer -%>
+    We've already given <%= @entry.referrer_name %> another chance.
+  <% end %>
+</p>
+
+<p>
+  <%= link_to root_url(r: @entry.code) %>
+</p>
+
+<p>
+  <%= link_to "Share on Facebook", share_on_facebook_url(@entry), target: :_blank %>
+</p>
+
+<p>
+  <%= link_to "Share on Twitter", share_on_twitter_url(@entry), target: :_blank %>
+</p>
+
+<p>
+  <%= link_to "Share by Email", share_by_email_url(@entry) %>
+</p>
