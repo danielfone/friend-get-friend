@@ -1,0 +1,23 @@
+<p>
+  <%= pluralize @entries.count, 'entry' %>
+  (<%= @entries.direct.count %> direct, <%= @entries.referred.count %> referred)
+  <%= link_to 'Download CSV', format: :csv %>
+</p>
+
+<%- if @entries.winners.any? -%>
+  <h2>Winners:</h2>
+  <table>
+    <%- @entries.winners.each do |winner| -%>
+      <tr>
+        <td>
+          <%= winner.name %>
+        </td>
+        <td>
+          <%= link_to winner.email, "mailto:#{winner.email}" %>
+        </td>
+      </tr>
+    <%- end -%>
+  </table>
+<%- else -%>
+  <%= button_to 'Draw Winners', action: :draw_winners %>
+<% end %>

@@ -5,6 +5,10 @@ class Entry < ActiveRecord::Base
 
   belongs_to :referrer, class_name: 'Entry'
 
+  scope :referred, where('referrer_id IS NOT NULL')
+  scope :direct,   where('referrer_id IS NULL')
+  scope :winners,  where(winner: true)
+
   validates :name, presence: true
   validates :email, format: /.+@.+\..+/
   validates :sign_up, acceptance: true
@@ -21,6 +25,18 @@ class Entry < ActiveRecord::Base
 
   def referrer_name
     referrer.name if referrer
+  end
+
+  def mark_as_winner!
+    Entry.where(id: [id, referrer_id]).update_all winner: true
+  end
+
+  def self.random
+    find :first, offset: rand(count)
+  end
+
+  def self.draw_winners!
+    random.mark_as_winner!
   end
 
 private

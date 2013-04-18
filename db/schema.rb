@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418082638) do
+ActiveRecord::Schema.define(:version => 20130418094503) do
 
   create_table "entries", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20130418082638) do
     t.datetime "updated_at",  :null => false
     t.string   "code"
     t.integer  "referrer_id"
+    t.boolean  "winner"
   end
 
   add_index "entries", ["email"], :name => "index_entries_on_email", :unique => true

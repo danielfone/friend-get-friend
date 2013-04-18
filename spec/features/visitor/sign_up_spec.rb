@@ -43,4 +43,9 @@ feature 'Sign Up' do
     expect(page).to have_text "We've already given Bob another chance."
   end
 
+  scenario 'Visitor connects insecurely' do
+    visit '/'
+    expect(current_url).to start_with 'https://'
+  end
+
 end
