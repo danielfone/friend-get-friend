@@ -1,6 +1,6 @@
 ## Friend Get Friend Demo App
 
-_Live coded with the enthusiastic support of the the nzruby/christchurch group_
+_Live coded with the enthusiastic support of the [@chchruby](https://twitter.com/chchruby) group_
 
 ## Bash history
 
@@ -8,7 +8,7 @@ I've expanded my shortcuts in the list below.
 I have `HISTCONTROL=ignoredups:erasedups` so only the last time a ran a command is recorded below.
 
 
-```
+```bash
 [2013-04-18 19:35:37]: rails new friend-get-friend --skip-bundle
 [2013-04-18 19:35:50]: cd friend-get-friend
 [2013-04-18 19:35:54]: git init
@@ -29,7 +29,7 @@ I have `HISTCONTROL=ignoredups:erasedups` so only the last time a ran a command 
 
 [2013-04-18 21:13:40]: rspec -fd spec/features/visitor/sign_up_spec.rb 
 [2013-04-18 21:38:13]: bundle
-[2013-04-18 21:45:01]: rails generate migration AddWinnerToEntries winner:boolean[A
+[2013-04-18 21:45:01]: rails generate migration AddWinnerToEntries winner:boolean
 [2013-04-18 21:45:13]: rake db:migrate db:test:prepare
 [2013-04-18 21:45:41]: rspec -fd spec/models/entry_spec.rb 
 [2013-04-18 21:58:54]: rspec -fd spec/features/admin/manage_entries_spec.rb 
