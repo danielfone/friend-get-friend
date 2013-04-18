@@ -1,0 +1,129 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+body {
+ font-family: "helvetica neue", helvetica, arial, sans-serif;
+ font-size: 20px;
+ line-height: 28px;
+ margin: 0;
+ background-color: #fafafa;
+}
+
+a {
+ color: #66f;
+ text-decoration: none;
+ &:visited {
+   color: #66f; }
+ &:hover {
+   color: #fff;
+   background-color: #66f; } }
+
+#page-content {
+  background-color: #fff;
+  color: #333;
+  width: 400px;
+  margin: 0 auto 1em;
+  padding: 1px 20px 20px 20px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-top: none;
+  box-shadow: 0 0 10px #eee;
+}
+
+label { cursor: pointer; }
+
+.field {
+  margin: 1em 0;
+
+  input { font-size: 20px; line-height: 24px; }
+
+  input[type="text"] {
+    width: 95%;
+    padding: 0.5em;
+    font-family: inherit;
+    color: #777;
+  }
+
+  input[type="submit"] {
+    border-radius: 10px;
+    background: #06c;
+    color: #fff;
+    width: 100%;
+    background-image: -webkit-gradient(linear, 0% 0, 0% 100%, from(#3372E6), color-stop(0.5, #36C), to(#3359B3));
+    font-size: 10pt;
+    font-weight: bold;
+    text-shadow: #000 0px -1px 1px;
+    padding: 5px 21px 7px;
+    border: none;
+    vertical-align: top;
+    cursor: pointer;
+  }
+
+}
+
+.field_with_errors {
+  display: inline;
+
+  label {
+    background: #fdd;
+    padding: 0 0.5em;
+  }
+}
+
+.error-explanation {
+  background: #fdd;
+  padding: 0.5em 0.5em;
+  border: red 2px;
+  margin: 0.5em 0;
+  border-style: solid none;
+
+  h3 { margin: 0;}
+}
+
+ul.menu {
+  height: 32px;
+  list-style: none;
+  margin: 0 -20px;
+  padding: 0 20px;
+  background: #eee;
+  border: 1px #ccc;
+  border-style: solid none;
+  clear: both;
+
+  li.admin {
+    float: right;
+  }
+  .menu-option {
+    font-size: 16px;
+    float: left;
+    padding: 0.25em 1em;
+    margin: 5px 10px -1px 0;
+    border: 1px solid #ccc;
+    height: 18px;
+    border-bottom-color: #fff;
+    background: #fff;
+  }
+
+  a {
+    padding: 0;
+  }
+
+  a .menu-option {
+    border-bottom: none;
+  }
+
+  a:hover .menu-option {
+    background: #aaa;
+  }
+
+}

@@ -1,0 +1,26 @@
+<p>
+  Win an iPad mini.
+</p>
+
+<%= form_for @entry, url: entry_path do |f| %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.check_box :sign_up %>
+    <%= f.label :sign_up, 'I want to sign up to the mailing list' %>
+  </div>
+
+  <div class="field">
+    <%= f.submit 'Sign Up' %>
+  </div>
+
+<% end %>
