@@ -2,6 +2,17 @@
   Win an iPad mini.
 </p>
 
+<%- if @entry.errors.any? -%>
+  <div class="error-explanation">
+    <h3>Sorry:</h3>
+    <ul>
+    <%- @entry.errors.full_messages.each do |msg| -%>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<%- end -%>
+
 <%= form_for @entry, url: entry_path do |f| %>
 
   <div class="field">

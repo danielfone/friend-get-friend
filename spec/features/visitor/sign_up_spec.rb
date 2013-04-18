@@ -11,6 +11,12 @@ feature 'Sign Up' do
     expect(page).to have_text 'Thanks for signing up Test visitor'
   end
 
-  scenario 'Visitor submits invalid info'
+  scenario 'Visitor submits invalid info' do
+    visit '/'
+    click_button 'Sign Up'
+    expect(page).to have_text "Name can't be blank"
+    expect(page).to have_text "Email is invalid"
+    expect(page).to have_text "Sign up must be accepted"
+  end
 
 end
