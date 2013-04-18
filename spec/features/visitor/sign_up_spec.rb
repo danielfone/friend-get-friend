@@ -27,7 +27,7 @@ feature 'Sign Up' do
     Entry.create! name: 'Test', email: 'test@example.com'
     visit '/'
     fill_in 'Name', with: 'Test visitor'
-    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Email', with: 'TEST@example.com'
     check 'I want to sign up to the mailing list'
     click_button 'Sign Up'
     expect(page).to have_text 'Email has already signed up'
