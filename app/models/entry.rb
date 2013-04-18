@@ -13,6 +13,7 @@ class Entry < ActiveRecord::Base
   validates :email, format: /.+@.+\..+/
   validates :sign_up, acceptance: true
 
+  before_create :downcase_email
   before_create :generate_code
   before_create :find_referrer, if: :referrer_code
 
@@ -40,6 +41,10 @@ class Entry < ActiveRecord::Base
   end
 
 private
+
+  def downcase_email
+    self.email.downcase!
+  end
 
   def generate_code
     self.code = SecureRandom.hex
