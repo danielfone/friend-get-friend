@@ -19,4 +19,14 @@ feature 'Sign Up' do
     expect(page).to have_text "Sign up must be accepted"
   end
 
+  scenario 'Visitor signs up twice' do
+    Entry.create! name: 'Test', email: 'test@example.com'
+    visit '/'
+    fill_in 'Name', with: 'Test visitor'
+    fill_in 'Email', with: 'test@example.com'
+    check 'I want to sign up to the mailing list'
+    click_button 'Sign Up'
+    expect(page).to have_text 'Email has already signed up'
+  end
+
 end
