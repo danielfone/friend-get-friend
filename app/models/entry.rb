@@ -30,7 +30,7 @@ private
   end
 
   def find_referrer
-    self.referrer = Entry.find_by_code referrer_code
+    self.referrer = Entry.where(code: referrer_code).first
   end
 
 end
