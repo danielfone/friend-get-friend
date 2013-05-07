@@ -38,3 +38,5 @@ I have `HISTCONTROL=ignoredups:erasedups` so only the last time a ran a command 
 [2013-04-18 22:00:32]: git push heroku master
 [2013-04-18 22:01:50]: heroku run rake db:migrate
 ```
+
+
